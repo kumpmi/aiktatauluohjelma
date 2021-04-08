@@ -1,0 +1,66 @@
+
+body {
+	   background: lightskyblue;
+}
+div {
+	font-size: 25px;
+	  float: left;
+	  padding-top: 10px;
+}
+small {
+	float: left;
+	text-align: left;
+	font-size: 30px;
+	width: 200;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: greenyellow;
+	border: 2px solid black;
+}
+button {
+	background-color: orange;
+	font-size: 40px;
+	width: 300px;
+	height: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 30px;
+}
+#boxes {
+	 display: table;
+	  clear: both;
+}
+#clock1,
+#clock2 { 
+	font-size: 175px; 
+	width: 900px; 
+	margin: 20px; 
+	text-align: center;
+	color: black;
+}  
+#clock3 { 
+	font-size: 175px; 
+	width: 900px; 
+	margin: 20px; 
+	text-align: center;
+	color: red;
+}
+#fixlist,
+#indlist { 
+	width: 250px; 
+	height: 2000px;
+	margin: 20px;
+	padding-top: 50px ;
+	text-align: center;
+	color: black;
+}  
+#conflictlist { 
+	width: 250px; 
+	height: 2000px;
+	margin: 20px;
+	padding-top: 50px;
+	text-align: center;
+	color: black;
+} 

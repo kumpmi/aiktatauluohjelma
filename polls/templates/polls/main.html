@@ -1,0 +1,401 @@
+<!DOCTYPE html> 
+<html lang="fi">
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<head> 
+	<meta charset="UTF-8" /> 
+	<meta name="viewport" content= 
+		"width=device-width,  
+		initial-scale=1.0" /> 
+  
+	<title>Rotaatiovalun aikataulu</title> 
+	<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+	<style> 
+
+		body {
+   			background: lightskyblue;
+		}
+		div {
+			font-size: 25px;
+  			float: left;
+  			padding-top: 10px;
+		}
+		small {
+			float: left;
+			text-align: left;
+			font-size: 30px;
+			width: 240px;
+			height: 150px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 5px;
+			padding-right: 5px;
+			background-color: greenyellow;
+			border: 2px solid black;
+		}
+		button {
+			background-color: orange;
+			font-size: 40px;
+			width: 300px;
+			height: 100px;
+			margin-left: 50px;
+			margin-right: 50px;
+			margin-top: 30px;
+		}
+		#boxes {
+ 			display: table;
+  			clear: both;
+		}
+		#clock1,
+		#clock2 { 
+			font-size: 175px; 
+			width: 800px; 
+			margin: 0px; 
+			padding-top: 40px;
+			text-align: center;
+			color: black;
+		}  
+		#clock3 { 
+			font-size: 175px; 
+			width: 800px; 
+			margin: 0px; 
+			padding-top: 40px;
+			text-align: center;
+			color: red;
+		}
+		#fixlist,
+		#indlist { 
+			width: 250px; 
+			height: 2000px;
+			margin: 20px;
+			padding-top: 50px ;
+			text-align: center;
+			color: black;
+		}  
+		#conflictlist { 
+			width: 380px; 
+			height: 2000px;
+			margin: 0px;
+			padding-top: 60px;
+			text-align: center;
+			color: black;
+		} 
+	</style> 
+
+</head> 
+<body> 
+	<main id="boxes">
+
+		<div id="demo"></div>
+
+		<button onclick="window.location.href='http:\/\/127.0.0.1:8000/admin/';"> ADMIN </button>
+		<button onclick="window.location.href='http:\/\/127.0.0.1:8000/admin/polls/apu/';"> LISÄAPU </button>
+		<button onclick="window.location.href='http:\/\/127.0.0.1:8000/admin/polls/kone/';"> KONEET </button>
+		<button onclick="window.location.reload(true)"> PÄIVITÄ </button>
+		
+		<div id="fixlist"></div>
+		<div id="indlist"></div>	
+		<div id="conflictlist"></div>
+
+
+		<div id="clock1"></div> 
+		<div id="clock2"></div> 
+    	<div id="clock3"></div> 
+	</main>
+	<script> 
+
+		function isLaterThan(string, time){ 
+			var is_next = false;
+
+			var hour = time.getHours(); 
+            var min = time.getMinutes(); 
+			var sec = time.getSeconds(); 
+
+			let start = string
+			var times = start.split(":");
+			var start_hour = parseInt(times[0],10);
+			var start_min = parseInt(times[1],10);
+			var start_sec = parseInt(times[2],10);
+			if (start_hour > hour) {
+				is_next = true;
+			}
+			else if (start_hour == hour){
+				if(start_min > min) {
+						is_next = true;
+				}
+				else if (start_min == min){
+					if (start_sec >= sec) {
+						is_next = true;
+					}
+				}
+			}
+			return is_next;
+		}
+
+		function isLaterThanString(string1, string2){ 
+			var is_next = false;
+
+			let start1 = string1;
+			var times1 = start1.split(":");
+			var start_hour1 = parseInt(times1[0],10);
+			var start_min1 = parseInt(times1[1],10);
+			var start_sec1 = parseInt(times1[2],10);
+
+			let start2 = string2;
+			var times2 = start2.split(":");
+			var start_hour2 = parseInt(times2[0],10);
+			var start_min2 = parseInt(times2[1],10);
+			var start_sec2 = parseInt(times2[2],10);
+
+			if (start_hour1 > start_hour2) {
+				is_next = true;
+			}
+			else if (start_hour1 == start_hour2){
+				if(start_min1 > start_min2) {
+						is_next = true;
+				}
+				else if (start_min1 == start_min2){
+					if (start_sec1 >= start_min2) {
+						is_next = true;
+					}
+				}
+			}
+			return is_next;
+		}
+
+        function showTime(string) { 
+			console.log(string)
+			var time = new Date(); 
+			var conflict_object = JSON.parse(string)["conflicts"];
+			console.log("showTime" + conflict_object);
+			var next_time = ["00","00","00"]; 
+			conflicts_in_future = false;
+            for (var i = 0; i < conflict_object.length; i++) {
+				let start = conflict_object[i].manual_start;
+				is_next = isLaterThan(start, time);
+				if (is_next) {
+					next_time = start.split(":");
+					conflicts_in_future = true;
+					break;
+				}
+			}
+
+			var next_hour = parseInt(next_time[0],10);
+			var next_min = parseInt(next_time[1],10);
+			var next_sec = parseInt(next_time[2],10);
+
+			let year = time.getFullYear();
+			let month = time.getMonth();
+			let day = time.getDay()
+            let hour = time.getHours(); 
+            let min = time.getMinutes(); 
+			let sec = time.getSeconds(); 
+			
+			let next = new Date(year, month, day, next_hour, next_min, next_sec);
+			let hour_next = next.getHours();
+			let min_next = next.getMinutes();
+			let sec_next = next.getSeconds();
+
+			let to_next = next - time;
+			let time_to_next = new Date(to_next);
+			let hour_to_next = time_to_next.getHours()-2;
+			let min_to_next = time_to_next.getMinutes();
+			let sec_to_next = time_to_next.getSeconds();
+
+            hour = hour < 10 ? "0" + hour : hour; 
+            min = min < 10 ? "0" + min : min; 
+			sec = sec < 10 ? "0" + sec : sec; 
+
+            hour_next = hour_next < 10 ? "0" + hour_next : hour_next; 
+            min_next = min_next < 10 ? "0" + min_next : min_next; 
+			sec_next = sec_next < 10 ? "0" + sec_next : sec_next; 
+
+            hour_to_next = hour_to_next < 10 ? "0" + hour_to_next : hour_to_next; 
+            min_to_next = min_to_next < 10 ? "0" + min_to_next : min_to_next; 
+			sec_to_next = sec_to_next < 10 ? "0" + sec_to_next : sec_to_next; 
+
+            let currentTimeString = hour + ":" + min;
+			let nextTimeString = hour_next + ":" + min_next;
+			let toNextString = hour_to_next + ":" + min_to_next;
+
+			if (!conflicts_in_future){
+				nextTimeString = "00:00"
+				toNextString = "00:00"
+			}
+
+            document.getElementById("clock1").innerHTML = currentTimeString; 
+            document.getElementById("clock2").innerHTML = nextTimeString; 
+            document.getElementById("clock3").innerHTML = toNextString; 
+		} 
+
+		function showConflictList(string) {
+			console.log(string)
+			var conflict_object = JSON.parse(string)["conflicts"];
+
+			console.log("ConflictList" + conflict_object)
+            var mainContainer = document.getElementById("conflictlist");
+			var time = new Date(); 
+			mainContainer.innerHTML = ""
+			conflicts_in_future = false;
+            for (var i = 0; i < conflict_object.length; i++) {
+				var conflict = conflict_object[i];
+				var start = conflict.manual_start;
+				var info = conflict.info;
+				is_next = isLaterThan(start, time);
+				if (is_next) {
+                	var div = document.createElement("div");
+                	div.innerHTML = start + ', ' + info;
+					mainContainer.appendChild(div);
+					conflicts_in_future = true;
+				}
+			}
+			if (!conflicts_in_future){
+				var div = document.createElement("div");
+                div.innerHTML = "Ei tulevia konflikteja";
+                mainContainer.appendChild(div);
+			}
+		}
+		
+		function showFixList(string) {
+
+			console.log(string)
+			var conflict_object = JSON.parse(string)["fix"];
+
+			var time = new Date();
+
+            var mainContainer = document.getElementById("fixlist");
+			mainContainer.innerHTML = ""
+			var count = 0;
+
+			var prev = false
+			for (var i = 0; i < conflict_object.length; i++) {
+				arm = conflict_object[i]
+				var start = arm.start;
+				var prev_arm = conflict_object[i-1];
+				var manual_start = arm.manual_start;
+				is_next = isLaterThan(start, time);
+				var desc = "----------------"
+
+				if (is_next) {
+					if (!prev) {
+						if (prev_arm.kaksi == "True"){
+							desc = "Tarvitaan kaksi"
+						}	
+						var div = document.createElement("small");
+						var index = parseInt(prev_arm.arm_index) + 1;
+						div.innerHTML = 'Varsi ' + index + '\t\n' +
+						prev_arm.start + "\n" + 
+						prev_arm.manual_start + "\n" +
+						desc;
+						mainContainer.appendChild(div);
+						count++;
+						prev = true
+					}
+					if (arm.kaksi == "True"){
+						desc = "Tarvitaan kaksi"
+					}					var div = document.createElement("small");
+					var index = parseInt(conflict_object[i].arm_index) + 1;
+					div.innerHTML = 'Varsi ' + index + '\t\n' +
+					start + "\n" + 
+					manual_start + "\n" +
+					desc;
+					mainContainer.appendChild(div);
+					count++;
+				}
+				if (count == 4){
+					break;
+				}
+			}
+		}
+		
+		function showIndList(string) {
+
+			var conflict_object = JSON.parse(string)["ind"];
+
+			var time = new Date();
+
+            var mainContainer = document.getElementById("indlist");
+			mainContainer.innerHTML = ""
+			var count = 0;
+
+			prev = false;
+			for (var i = 0; i < conflict_object.length; i++) {
+				arm = conflict_object[i]
+				var start = arm.start;
+				var manual_start = arm.manual_start;
+				is_next = isLaterThan(start, time);
+				var desc = "----------------"
+
+				if (is_next) {
+					if (!prev) {
+				var prev_arm = conflict_object[i-1];
+						for (var j = 1; i < 3; i++){
+							var prev_arm = conflict_object[i-j];
+							if (prev_arm.kaksi == "True"){
+								desc = "Tarvitaan kaksi"
+							}	
+							var div = document.createElement("small");
+							var index = parseInt(prev_arm.arm_index) + 1;
+							div.innerHTML = 'Varsi ' + index + '\t\n' +
+							prev_arm.start + "\n" + 
+							prev_arm.manual_start + "\n" +
+							desc;
+							mainContainer.appendChild(div);
+							count++;
+							prev = true
+						}
+					}
+					if (arm.kaksi == "True"){
+						desc = "Tarvitaan kaksi"
+					}					var div = document.createElement("small");
+					var index = parseInt(arm.arm_index) + 1;
+					div.innerHTML = 'Varsi ' + index + '\t\n' +
+					start + "\n" + 
+					manual_start + "\n" +
+					desc;
+					mainContainer.appendChild(div);
+					count++;
+				}
+				if (count == 4){
+					break;
+				}
+			}
+        }
+
+		function helpRequest() {
+			var time = prompt("Milloin tarvitset apua?", "HH:MM");
+			if (time == null || time == "") {
+				window.alert("Avunpyyntöä ei lisätty");
+				return;
+			}
+			time += ":00";
+			helps.push(time);
+			window.alert("Avunpyyntö lisätty ajalle " + time + ".");
+		}
+
+		function removeHelp() {
+			window.alert("Avunpyyntö aikaan " + helps[0] + " poistettu.")
+			helps = ["99:99:99"];
+		}
+
+		var helps = ["99:99:99"];
+
+		var json_string = "{{data|escapejs}}";
+		console.log(json_string);
+
+		setInterval(() => showFixList(json_string), 5000);
+		showFixList(json_string);
+		setInterval(() => showIndList(json_string), 5000);
+		showIndList(json_string);
+		setInterval(() => showConflictList(json_string), 5000);
+		showConflictList(json_string);
+		setInterval(() => showTime(json_string), 1000); 
+		showTime(json_string); 
+		
+    </script> 
+</body> 
+</html> 

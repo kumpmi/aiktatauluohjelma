@@ -1,0 +1,512 @@
+[
+
+		{
+			"arm_index": "0",
+			"start": "11:14:00",
+			"stop": "11:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "11:29:00",
+			"stop": "11:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "11:44:00",
+			"stop": "11:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "11:59:00",
+			"stop": "12:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "12:14:00",
+			"stop": "12:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "12:29:00",
+			"stop": "12:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "12:44:00",
+			"stop": "12:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "12:59:00",
+			"stop": "13:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "13:14:00",
+			"stop": "13:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "13:29:00",
+			"stop": "13:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "13:44:00",
+			"stop": "13:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "13:59:00",
+			"stop": "14:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "14:14:00",
+			"stop": "14:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "14:29:00",
+			"stop": "14:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "14:44:00",
+			"stop": "14:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "14:59:00",
+			"stop": "15:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "15:14:00",
+			"stop": "15:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "15:29:00",
+			"stop": "15:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "15:44:00",
+			"stop": "15:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "15:59:00",
+			"stop": "16:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "16:14:00",
+			"stop": "16:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "16:29:00",
+			"stop": "16:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "16:44:00",
+			"stop": "16:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "16:59:00",
+			"stop": "17:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "17:14:00",
+			"stop": "17:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "17:29:00",
+			"stop": "17:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "17:44:00",
+			"stop": "17:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "17:59:00",
+			"stop": "18:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "18:14:00",
+			"stop": "18:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "18:29:00",
+			"stop": "18:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "18:44:00",
+			"stop": "18:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "18:59:00",
+			"stop": "19:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "19:14:00",
+			"stop": "19:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "19:29:00",
+			"stop": "19:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "19:44:00",
+			"stop": "19:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "19:59:00",
+			"stop": "20:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "20:14:00",
+			"stop": "20:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "20:29:00",
+			"stop": "20:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "20:44:00",
+			"stop": "20:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "20:59:00",
+			"stop": "21:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "21:14:00",
+			"stop": "21:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "21:29:00",
+			"stop": "21:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "21:44:00",
+			"stop": "21:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "21:59:00",
+			"stop": "22:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "22:14:00",
+			"stop": "22:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "22:29:00",
+			"stop": "22:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "22:44:00",
+			"stop": "22:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "22:59:00",
+			"stop": "23:13:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "0",
+			"start": "23:14:00",
+			"stop": "23:28:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "True",
+			"info": ""
+		},
+
+		{
+			"arm_index": "1",
+			"start": "23:29:00",
+			"stop": "23:43:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		},
+
+		{
+			"arm_index": "2",
+			"start": "23:44:00",
+			"stop": "23:58:00",
+			"manual_start": "00:00:00",
+			"manual_stop": "00:00:00",
+			"kaksi": "False",
+			"info": ""
+		}
+]
