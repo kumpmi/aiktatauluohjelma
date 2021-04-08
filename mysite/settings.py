@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ukmuoviaikataulu.azurewebsites.net']
 
+ALLOWED_HOSTS = [
+  'localhost',
+  '127.0.0.1',
+  '20.50.64.5',
+  'ukmuoviaikataulu.azurewebsites.net']
 
 # Application definition
 
