@@ -102,13 +102,15 @@ class Scheduling():
 			manual_time = arm.purkuvaiheen_pituus
 			wait_time = arm.odotusvaiheen_pituus
 			operating_time = arm.konevaiheen_pituus + arm.jaahdytysvaiheen_pituus+3*siirron_kesto
-			
+			total_time = manual_time + operating_time + wait_time + siirron_kesto
+
 			while(last_finish.isEarlierThan(Time(hours= 24))):
 				ind_schedules[arm_i].append(Operating_interval(arm_i, last_finish, last_finish.add(Interval(seconds= manual_time + wait_time)), False, arm.kaksi, "2800", Time(), Time(), ""))
-				last_finish = last_finish.add(Interval(seconds= operating_time)).add(Interval(seconds= manual_time))
+				last_finish = last_finish.add(Interval(seconds= total_time))
 
-			last_finish = alku.add(Interval(seconds= (manual_time + operating_time + siirron_kesto) / 4 * n))
+			last_finish = alku.add(Interval(seconds= total_time / 4 * n))
 			n += 1
+
 
 		ind_schedules.rotate(-index)
 		i = 0
