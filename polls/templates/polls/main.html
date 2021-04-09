@@ -241,7 +241,7 @@
 			var time = new Date(); 
 			mainContainer.innerHTML = ""
 			conflicts_in_future = false;
-            for (var i = 0; i < conflict_object.length; i++) {
+         			for (var i = 0; i < conflict_object.length; i++) {
 				var conflict = conflict_object[i];
 				var start = conflict.manual_start;
 				var info = conflict.info;
@@ -267,7 +267,7 @@
 
 			var time = new Date();
 
-            var mainContainer = document.getElementById("fixlist");
+            		var mainContainer = document.getElementById("fixlist");
 			mainContainer.innerHTML = ""
 			var count = 0;
 
@@ -318,7 +318,7 @@
 
 			var time = new Date();
 
-            var mainContainer = document.getElementById("indlist");
+            		var mainContainer = document.getElementById("indlist");
 			mainContainer.innerHTML = ""
 			var count = 0;
 
@@ -364,26 +364,12 @@
 					break;
 				}
 			}
-        }
+        	}
 
-		function helpRequest() {
-			var time = prompt("Milloin tarvitset apua?", "HH:MM");
-			if (time == null || time == "") {
-				window.alert("Avunpyyntöä ei lisätty");
-				return;
-			}
-			time += ":00";
-			helps.push(time);
-			window.alert("Avunpyyntö lisätty ajalle " + time + ".");
+		function refresh(){
+			window.location.reload(true)
 		}
-
-		function removeHelp() {
-			window.alert("Avunpyyntö aikaan " + helps[0] + " poistettu.")
-			helps = ["99:99:99"];
-		}
-
-		var helps = ["99:99:99"];
-
+		
 		var json_string = "{{data|escapejs}}";
 		console.log(json_string);
 
@@ -395,6 +381,7 @@
 		showConflictList(json_string);
 		setInterval(() => showTime(json_string), 1000); 
 		showTime(json_string); 
+		setInterval(() => refresh(), 60000);
 		
     </script> 
 </body> 
